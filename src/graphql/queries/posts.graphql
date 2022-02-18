@@ -1,0 +1,34 @@
+query Posts($slug: String!)  {
+    posts (orderBy: publishedAt_DESC) {
+        title
+        slug
+        excerpt
+        publishedAt
+        coverImage {
+            url (
+                transformation: {
+                    image: {
+                        resize: { width: 400 }
+                    }
+                }
+            )
+        }
+        author {
+            name
+            id
+            picture {
+                url (
+                    transformation: {
+                        image: {
+                            resize: {
+                                width: 400,
+                                height: 400,
+                                fit: crop
+                            }
+                        }
+                    }
+                )
+            }
+        }
+    }
+}
