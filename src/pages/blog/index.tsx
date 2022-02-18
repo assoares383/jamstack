@@ -25,7 +25,7 @@ export default function Blog() {
         </div>
         <div className="mt-12 max-w-lg mx-auto grid gap-5 lg:grid-cols-3 lg:max-w-none">
           {posts.map((post) => (
-            <BlogPost key={post.slug} post={{
+            <BlogPost key={post.title} post={{
               title: post.title,
               href: `/blog/${post.slug}`,
               description: post.excerpt,
